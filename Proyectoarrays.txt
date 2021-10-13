@@ -1,0 +1,194 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+public class vectores_ {
+
+   
+    public static void main(String[] args) {
+        // TODO code application logic here
+        int numeros[]=new int[10];
+        int i = 0;
+        int opcion;
+        boolean En = false;
+        boolean Sa = false;
+        int sumaTotal=0;
+        int mayor =0;
+        int menor =0;
+        int acum_par=0;
+        int acum_impar=0;
+        int res=0;
+        int p=0;
+        int n = 0,sp=0,cp=0,x;
+        double pp;
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        int cantidad_pares, i1, suma_pares, un_numero;
+        double media_impares;
+        cantidad_pares = 0;
+        suma_pares = 0;
+        media_impares = 0;
+          
+        double media_impares1;
+        int cantidad_pares1 = 0;
+        int suma_pares1 = 0;
+      
+         int mayorv = Integer.MIN_VALUE;
+        int menorv = Integer.MAX_VALUE;
+             
+      Scanner sc = new Scanner(System.in);
+      Scanner sm = new Scanner(System.in);
+      
+       while (true) {
+           
+            System.out.println("=========Elige una Opcion y obten tus Resultados===");
+            System.out.println("Opcion 1========Llenar el Vector Aleatoriamente====");
+            System.out.println("Opcion 2==========Llenar el Vector Manualmente======");
+            System.out.println("Opcion 3==================Salir===================");
+            
+
+            try {
+                System.out.println("Introduce una opcion  entre 1 y 3");
+                opcion = sc.nextInt();
+
+                switch (opcion) {
+                    case 1:
+                        System.out.println("Este Vector se Realiza Aleatoriamente entre -10 y 10");
+                            //Primero lleno el array con números aleatorios del -10 al 10
+                        System.out.println();
+                        System.out.println();
+                        
+                             for (i1=0;i1<numeros.length;i1++){
+                                numeros[i1]=(int)(Math.random()*10-10+i1);
+                                System.out.println("En la Poscision["+i1+"]esta el vector:"+numeros[i1]);
+                                System.out.println();
+                                
+                                 }
+
+                        break;
+
+                    case 2:
+                            
+
+                        System.out.println("===Este Vector se Realiza Manualmente===");
+                        System.out.println();
+                        
+                        System.out.println("Introduce el Primer numero ");
+                        opcion = sc.nextInt();
+                         
+                        
+                        
+                        System.out.println("Introduce el Segundo numero ");
+                         opcion = sc.nextInt();
+                        
+                        
+                        System.out.println("Introduce el Tercer numero ");
+                         opcion = sc.nextInt();
+                        
+                        System.out.println("Introduce el Cuarto numero ");
+                         opcion = sc.nextInt();
+                        
+                        System.out.println("Introduce el Quinto numero ");
+                         opcion = sc.nextInt();
+                        
+                        System.out.println("Introduce el Sexto numero ");
+                         opcion = sc.nextInt();
+                        
+                        System.out.println("Introduce el Septimo numero ");
+                         opcion = sc.nextInt();
+                        
+                        System.out.println("Introduce el Octavo numero ");
+                         opcion = sc.nextInt();
+                        
+                        System.out.println("Introduce el Noveno numero ");
+                         opcion = sc.nextInt();
+                        
+                        System.out.println("Introduce el Decimo numero ");
+                        
+                        Scanner gt = new Scanner(System.in);
+                        System.out.println("");
+                    
+                   
+                        for(int i11=1;i11<=n;i11++)
+                        { 
+                         System.out.println("Elemento ["+i11+"]=");
+                         x=gt.nextInt();
+                         if(x%2==0)
+                         {sp=sp+x; 
+                         cp++;
+                         }
+                        }   
+                        pp=sp/cp;
+                         System.out.println("El Cantidad de pares son:" +cp);
+                         System.out.println("La suma de pares son:" +sp);
+                         System.out.println("El Promedio de pares es:" +pp); 
+           
+                        break;
+
+                    case 3:
+
+                        En = true;
+
+                        break;
+
+                    default:
+                        System.out.println("Las Opciones son entre 1 y 3");
+
+                }
+
+            break;
+
+
+            } catch (InputMismatchException e) {
+                System.out.println("Debe ser un numero");
+                sm.next();
+                sm.next();     
+                sm.next();
+            }
+            System.out.println("Fin del Menu");
+        }
+       if (Sa == false) {
+            
+            
+            System.out.println("Saliste del menu" );
+            
+            
+        /// Vector Mayor Y Menor
+             for ( i1 = 0; i1 < numeros.length; i1++) {
+            mayorv = Integer.max(mayorv, numeros[i1]);
+            menorv = Integer.min(menorv, numeros[i1]);
+             }
+        System.out.println("El mayor valor es "+mayorv);
+      
+        System.out.println("El menor valor es "+menorv);
+            
+        ///////////////////// SUMA VECTORES
+       
+            
+            for( i1 = 0; i1 < 10; i1++) {
+            
+            sumaTotal += numeros[i1];
+             
+        }
+             for( i1 = 0; i1 < 10; i1++) {
+        }
+        //////////////////////////////////////
+        double promedio = sumaTotal/10;
+         System.out.println("La suma de los Vectores es: "+sumaTotal);
+         
+         System.out.println("El promedio de los Vectores es: " + promedio);
+         
+          
+             for ( i1=0;i1<10;i1++){
+                 
+                 if (numeros[i1]% 2 == 0)
+                     System.out.println("Dato par en posicion:"+(i1+1));
+                    else
+                    System.out.println("Dato impar en posicion:"+(i1+1));
+             
+              
+             
+       }
+       
+       }
+    }
+}
